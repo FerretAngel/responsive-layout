@@ -57,6 +57,5 @@ function App() {
 - 使用 `pnpm build:lib` 构建库
 
 
-## �� 许可证
-
-MIT © [你的名字]
+## 📄 许可证
+MIT
