@@ -1,0 +1,21 @@
+{
+  "name": "react-packages-menorepo-template",
+  "version": "1.0.0",
+  "description": "a menorepo template for react packages",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter page dev",
+    "build:page": "pnpm --filter page build",
+    "build:lib": "pnpm --filter lib build",
+    "preview": "pnpm --filter page preview"
+  },
+  "dependencies": {
+    "lib": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0"
+}
