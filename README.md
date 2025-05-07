@@ -15,6 +15,7 @@
 
 ```
 .
+├── docs             # 示例页面（可以直接发布到github page）
 ├── packages/
 │   ├── page/        # 示例页面项目
 │   └── lib/         # 组件库项目
