@@ -10,14 +10,13 @@ export default defineConfig({
     entryRoot: './lib',
   })],
   build: {
-    emitAssets: true,
     lib: {
-      name: 'lib',
+      name: 'responsive-layout-react',
       entry: './lib/index.ts',
       fileName: format => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "*.svg"],
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "react",

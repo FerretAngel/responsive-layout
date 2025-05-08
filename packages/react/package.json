@@ -1,14 +1,20 @@
 {
-  "name": "lib",
-  "private": true,
-  "version": "0.0.0",
+  "name": "responsive-layout-react",
+  "version": "0.2.1",
   "type": "module",
-  "main": "./lib/index.js",
-  "module": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -32,5 +38,8 @@
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.3"
+  },
+  "dependencies": {
+    "zustand": "^5.0.4"
   }
 }
