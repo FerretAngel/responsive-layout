@@ -3,7 +3,9 @@
 
 # 🎯 Responsive Layout
 
-A modern responsive layout component, supporting both Vue and React, helping you easily build adaptive application interfaces!
+A modern responsive layout component, supporting both [Vue](https://www.npmjs.com/package/responsive-layout-vue) and [React](https://www.npmjs.com/package/responsive-layout-react), helping you easily build adaptive application interfaces!
+
+[✨online preview](https://ferretangel.github.io/responsive-layout/)
 
 ## ✨ Features
 

@@ -3,8 +3,9 @@
 
 # 🎯 Responsive Layout
 
-一个现代化的响应式布局组件，支持 Vue 和 React，帮助你轻松构建自适应的应用界面！
+一个现代化的响应式布局组件，支持 [Vue](https://www.npmjs.com/package/responsive-layout-vue) 和 [React](https://www.npmjs.com/package/responsive-layout-react)，帮助你轻松构建自适应的应用界面！
 
+[✨效果预览](https://ferretangel.github.io/responsive-layout/)
 ## ✨ 特性
 
 - 📱 完全响应式设计，完美支持移动端和桌面端
