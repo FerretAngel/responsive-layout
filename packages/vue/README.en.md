@@ -1,27 +1,26 @@
 # 🌐 README
-[English](./README.en.md)
+[中文](./README.md)
 
 # 🎯 Responsive Layout
 
-一个现代化的响应式布局组件，支持 Vue3 和 [react 18](https://www.npmjs.com/package/responsive-layout-react)，帮助你轻松构建自适应的应用界面！
+A modern responsive layout component, supporting both Vue3 and [react 18](https://www.npmjs.com/package/responsive-layout-react), helping you easily build adaptive application interfaces!
 
-## ✨ 特性
+## ✨ Features
 
-- 📱 完全响应式设计，完美支持移动端和桌面端
-- 🎨 基于 TailwindCSS，轻松自定义样式
-- 🔄 流畅的过渡动画，提供出色的用户体验
-- 🎯 支持导航栏、侧边栏和主内容区的灵活布局
-- 📦 基于 Zustand/Pinia 的状态管理，简单高效
-- ⚡️ 零依赖，轻量级实现
+- 📱 Fully responsive design, perfect support for mobile and desktop
+- 🎨 Based on TailwindCSS, easily customize styles
+- 🔄 Smooth transition animations, providing excellent user experience
+- 🎯 Flexible layout for navigation bar, sidebar, and main content area
+- 📦 Simple and efficient state management based on Zustand/Pinia
+- ⚡️ Zero dependencies, lightweight implementation
 
-## 📦 安装
+## 📦 Installation
+
 ```bash
 pnpm add responsive-layout-vue pinia
-
 ```
 
-
-## 🎨 TailwindCSS 配置
+## 🎨 TailwindCSS Configuration
 
 ### TailwindCSS 4.x
 
@@ -36,14 +35,15 @@ pnpm add responsive-layout-vue pinia
 // tailwind.config.js
 module.exports = {
   content: [
-    // ... 其他配置
+    // ... other configurations
     './node_modules/responsive-layout-vue/dist/**/*.{js,ts,vue}', 
   ],
 }
 ```
 
+## 📦 Using Components
 
-## 📦 使用组件
+### Vue Version
 
 ```vue
 <template>
@@ -74,7 +74,7 @@ import { ResponsiveLayout } from 'responsive-layout-vue'
 </script>
 ```
 
-## 🎯 组件 Props
+## 🎯 Component Props
 
 ```ts
 interface ClassNames {
@@ -91,15 +91,15 @@ interface Props {
 }
 ```
 
-### vue插槽
+### Vue Slots
 
-| 插槽名 | 说明 | 是否必需 |
+| Slot Name | Description | Required |
 |--------|------|----------|
-| `nav` | 导航栏内容 | 否 |
-| `main` | 主内容区 | 是 |
-| `aside` | 侧边栏内容 | 否 |
+| `nav` | Navigation bar content | No |
+| `main` | Main content area | Yes |
+| `aside` | Sidebar content | No |
 
-## 📦 Store 类型 (Pinia)
+## 📦 Store Types (Pinia)
 
 ```ts
 interface ResponsiveLayoutStore {
@@ -112,15 +112,14 @@ interface ResponsiveLayoutStore {
 }
 ```
 
-## 🎯 核心功能
+## 🎯 Core Features
 
-- 自动响应式布局，适配不同屏幕尺寸
-- 支持导航栏和侧边栏的显示/隐藏
-- 平滑的过渡动画
-- 支持自定义宽度和样式
-- 移动端支持滑动切换
+- Automatic responsive layout, adapting to different screen sizes
+- Support for showing/hiding navigation bar and sidebar
+- Smooth transition animations
+- Support for custom widths and styles
+- Swipe support on mobile devices
 
 
-## 📄 许可证
-MIT
-
+## 📄 License
+MIT 

@@ -7,7 +7,9 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "README.en.md"
   ],
   "exports": {
     ".": {
@@ -42,5 +44,21 @@
   },
   "dependencies": {
     "zustand": "^5.0.4"
+  },
+  "keywords": [
+    "responsive",
+    "layout",
+    "react",
+    "tailwindcss"
+  ],
+  "author": "FerretAngel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FerretAngel/responsive-layout"
+  },
+  "homepage": "https://github.com/FerretAngel/responsive-layout#readme",
+  "bugs": {
+    "url": "https://github.com/FerretAngel/responsive-layout/issues"
   }
 }

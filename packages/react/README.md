@@ -3,7 +3,7 @@
 
 # 🎯 Responsive Layout
 
-一个现代化的响应式布局组件，支持 Vue3 和 [react 18](https://www.npmjs.com/package/responsive-layout-react)，帮助你轻松构建自适应的应用界面！
+一个现代化的响应式布局组件，支持 [Vue3](https://www.npmjs.com/package/responsive-layout-vue) 和 React，帮助你轻松构建自适应的应用界面！
 
 ## ✨ 特性
 
@@ -16,9 +16,9 @@
 
 ## 📦 安装
 ```bash
-pnpm add responsive-layout-vue pinia
-
+pnpm add responsive-layout-react zustand
 ```
+
 
 
 ## 🎨 TailwindCSS 配置
@@ -27,7 +27,7 @@ pnpm add responsive-layout-vue pinia
 
 ```css
 /* index.css */
-@source './node_modules/responsive-layout-vue/dist/**/*.{js,ts,jsx,tsx}'; 
+@source './node_modules/responsive-layout-react/dist/**/*.{js,ts,jsx,tsx}'; 
 ```
 
 ### TailwindCSS 3.x
@@ -37,7 +37,7 @@ pnpm add responsive-layout-vue pinia
 module.exports = {
   content: [
     // ... 其他配置
-    './node_modules/responsive-layout-vue/dist/**/*.{js,ts,vue}', 
+    './node_modules/responsive-layout-react/dist/**/*.{js,ts,jsx,tsx}'
   ],
 }
 ```
@@ -45,33 +45,26 @@ module.exports = {
 
 ## 📦 使用组件
 
-```vue
-<template>
-  <ResponsiveLayout
-    :nav-width="'24rem'"
-    :aside-width="'24rem'"
-    class="custom-class"
-    :class-names="{
-      nav: 'nav-class',
-      aside: 'aside-class',
-      main: 'main-class'
-    }"
-  >
-    <template #nav>
-      <YourNav />
-    </template>
-    <template #main>
-      <YourMain />
-    </template>
-    <template #aside>
-      <YourAside />
-    </template>
-  </ResponsiveLayout>
-</template>
+```tsx
+import { ResponsiveLayout } from 'responsive-layout-react'
 
-<script setup lang="ts">
-import { ResponsiveLayout } from 'responsive-layout-vue'
-</script>
+function App() {
+  return (
+    <ResponsiveLayout
+      appNav={<YourNav />}
+      appAside={<YourAside />}
+      appMain={<YourMain />}
+      navWidth="24rem"
+      asideWidth="24rem"
+      className="custom-class"
+      classNames={{
+        nav: "nav-class",
+        aside: "aside-class",
+        main: "main-class"
+      }}
+    />
+  )
+}
 ```
 
 ## 🎯 组件 Props
@@ -83,7 +76,10 @@ interface ClassNames {
   main?: string;
 }
 
-interface Props {
+interface ResponsiveLayoutProps {
+  appNav?: React.ReactNode;
+  appAside?: React.ReactNode;
+  appMain: React.ReactNode;
   className?: string;
   classNames?: ClassNames;
   navWidth?: string;
@@ -91,15 +87,8 @@ interface Props {
 }
 ```
 
-### vue插槽
 
-| 插槽名 | 说明 | 是否必需 |
-|--------|------|----------|
-| `nav` | 导航栏内容 | 否 |
-| `main` | 主内容区 | 是 |
-| `aside` | 侧边栏内容 | 否 |
-
-## 📦 Store 类型 (Pinia)
+## 📦 Store 类型 (Zustand)
 
 ```ts
 interface ResponsiveLayoutStore {
@@ -111,6 +100,7 @@ interface ResponsiveLayoutStore {
   toggleAside: () => void;
 }
 ```
+
 
 ## 🎯 核心功能
 

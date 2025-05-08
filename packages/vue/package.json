@@ -1,13 +1,15 @@
 {
   "name": "responsive-layout-vue",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "Responsive Layout for Vue",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "README.en.md"
   ],
   "exports": {
     ".": {
@@ -32,5 +34,21 @@
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.3",
     "vue-tsc": "^2.2.8"
+  },
+  "keywords": [
+    "responsive",
+    "layout",
+    "react",
+    "tailwindcss"
+  ],
+  "author": "FerretAngel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FerretAngel/responsive-layout"
+  },
+  "homepage": "https://github.com/FerretAngel/responsive-layout#readme",
+  "bugs": {
+    "url": "https://github.com/FerretAngel/responsive-layout/issues"
   }
 }
