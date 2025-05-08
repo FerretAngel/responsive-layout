@@ -6,12 +6,11 @@
   "scripts": {
     "dev": "pnpm --filter rc-page dev",
     "dev:vue": "pnpm --filter vue-page dev",
-    "build:rcp": "pnpm --filter rc-page build",
-    "build:vuep": "pnpm --filter vue-page build",
+    "build": "pnpm --filter responsive-layout-react build && pnpm --filter responsive-layout-vue build",
+    "build:pages": "pnpm --filter rc-page build",
     "build:react": "pnpm --filter responsive-layout-react build",
     "build:vue": "pnpm --filter responsive-layout-vue build",
-    "preview:rcp": "pnpm --filter rc-page preview",
-    "preview:vue": "pnpm --filter vue-page preview"
+    "preview": "pnpm --filter rc-page preview"
   },
   "dependencies": {
     "react": "^19.1.0",

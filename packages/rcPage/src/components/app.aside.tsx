@@ -5,12 +5,12 @@ export interface AppAsideProps {
 }
 
 export const AppAside = ({ className }: AppAsideProps) => {
-  const setOpenAside = useResponsiveLayoutStore((state) => state.setOpenAside);
+  const toggleAside = useResponsiveLayoutStore((state) => state.toggleAside);
   return (
     <div className={cn("grid place-items-center", className)}>
       <button
         className="absolute top-2 left-2 z-50 md:hidden text-blue-500 text-2xl"
-        onClick={() => setOpenAside(false)}>
+        onClick={toggleAside}>
         <Icon icon="lucide:x" />
       </button>
       <h1>APP ASIDE</h1>
