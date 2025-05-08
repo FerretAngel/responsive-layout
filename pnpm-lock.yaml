@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@tailwindcss/vite':
+        specifier: ^4.1.5
+        version: 4.1.5(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -20,6 +23,12 @@ importers:
       responsive-layout-vue:
         specifier: workspace:*
         version: link:packages/vue
+      tailwindcss:
+        specifier: ^4.1.5
+        version: 4.1.5
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.8.3)
 
   packages/rcPage:
     dependencies:

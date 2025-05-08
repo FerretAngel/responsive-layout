@@ -7,7 +7,7 @@
     "dev": "pnpm --filter rc-page dev",
     "dev:vue": "pnpm --filter vue-page dev",
     "build": "pnpm --filter responsive-layout-react build && pnpm --filter responsive-layout-vue build",
-    "build:pages": "pnpm --filter rc-page build",
+    "build:page": "pnpm --filter rc-page build",
     "build:react": "pnpm --filter responsive-layout-react build",
     "build:vue": "pnpm --filter responsive-layout-vue build",
     "preview": "pnpm --filter rc-page preview"
@@ -15,6 +15,9 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "vue": "^3.5.13",
+    "@tailwindcss/vite": "^4.1.5",
+    "tailwindcss": "^4.1.5",
     "responsive-layout-react": "workspace:*",
     "responsive-layout-vue": "workspace:*"
   },
@@ -25,6 +28,6 @@
     "tailwindcss"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.10.0"
 }

@@ -1,62 +1,205 @@
-# 🚀 React Packages Monorepo Template
 
-一个现代化的 React 组件开发模板，让你轻松构建和发布高质量的 React 组件！
+# 🎯 Responsive Layout
+
+一个现代化的响应式布局组件，支持 Vue 和 React，帮助你轻松构建自适应的应用界面！
 
 ## ✨ 特性
 
-- 📦 基于 Monorepo 架构，同时管理多个相关项目
-- 🎨 内置 TailwindCSS，快速构建美观的 UI
-- 🎯 包含示例页面项目，方便组件预览和测试
-- 📚 独立的组件库项目，支持按需引入
-- 🖼️ 集成 Iconify，海量图标随心用
-- ⚡️ 基于 Vite，开发体验极速
+- 📱 完全响应式设计，完美支持移动端和桌面端
+- 🎨 基于 TailwindCSS，轻松自定义样式
+- 🔄 流畅的过渡动画，提供出色的用户体验
+- 🎯 支持导航栏、侧边栏和主内容区的灵活布局
+- 📦 基于 Zustand/Pinia 的状态管理，简单高效
+- ⚡️ 零依赖，轻量级实现
 
-## 🏗️ 项目结构
-
-```
-.
-├── docs             # 示例页面（可以直接发布到github page）
-├── packages/
-│   ├── page/        # 示例页面项目
-│   └── lib/         # 组件库项目
-├── package.json
-└── README.md
-```
-
-## 🚀 快速开始
-
-1. 克隆项目
+## 📦 安装
+- React
 ```bash
-git clone https://github.com/FerretAngel/react-packages-menorepo-template.git
+pnpm add responsive-layout-react zustand
 ```
-
-2. 安装依赖
+- vue
 ```bash
-pnpm install
+pnpm add responsive-layout-vue pinia
+
 ```
 
-3. 启动开发服务器
-```bash
-pnpm dev
+
+## 🎨 TailwindCSS 配置
+
+### TailwindCSS 4.x
+
+```css
+/* index.css */
+
+/* react only */
+@source './node_modules/responsive-layout-react/dist/**/*.{js,ts,jsx,tsx}';
+/* vue only */
+@source './node_modules/responsive-layout-vue/dist/**/*.{js,ts,jsx,tsx}'; 
 ```
 
-## 📦 使用组件库
+### TailwindCSS 3.x
 
-```jsx
-import { Button } from '@your-scope/lib'
-
-function App() {
-  return <Button>点击我</Button>
+```js
+// tailwind.config.js
+module.exports = {
+  content: [
+    // ... 其他配置
+    //react
+    './node_modules/responsive-layout-react/dist/**/*.{js,ts,jsx,tsx}',
+    // vue
+    './node_modules/responsive-layout-vue/dist/**/*.{js,ts,vue}', 
+  ],
 }
 ```
 
+
+## 📦 使用组件
+
+### React 版本
+
+```tsx
+import { ResponsiveLayout } from 'responsive-layout-react'
+
+function App() {
+  return (
+    <ResponsiveLayout
+      appNav={<YourNav />}
+      appAside={<YourAside />}
+      appMain={<YourMain />}
+      navWidth="24rem"
+      asideWidth="24rem"
+      className="custom-class"
+      classNames={{
+        nav: "nav-class",
+        aside: "aside-class",
+        main: "main-class"
+      }}
+    />
+  )
+}
+```
+
+### Vue 版本
+
+```vue
+<template>
+  <ResponsiveLayout
+    :nav-width="'24rem'"
+    :aside-width="'24rem'"
+    class="custom-class"
+    :class-names="{
+      nav: 'nav-class',
+      aside: 'aside-class',
+      main: 'main-class'
+    }"
+  >
+    <template #nav>
+      <YourNav />
+    </template>
+    <template #main>
+      <YourMain />
+    </template>
+    <template #aside>
+      <YourAside />
+    </template>
+  </ResponsiveLayout>
+</template>
+
+<script setup lang="ts">
+import { ResponsiveLayout } from 'responsive-layout-vue'
+</script>
+```
+
+## 🎯 组件 Props
+
+### React 版本
+
+```ts
+interface ClassNames {
+  nav?: string;
+  aside?: string;
+  main?: string;
+}
+
+interface ResponsiveLayoutProps {
+  appNav?: React.ReactNode;
+  appAside?: React.ReactNode;
+  appMain: React.ReactNode;
+  className?: string;
+  classNames?: ClassNames;
+  navWidth?: string;
+  asideWidth?: string;
+}
+```
+
+### Vue 版本
+
+```ts
+interface ClassNames {
+  nav?: string;
+  aside?: string;
+  main?: string;
+}
+
+interface Props {
+  className?: string;
+  classNames?: ClassNames;
+  navWidth?: string;
+  asideWidth?: string;
+}
+```
+
+### vue插槽
+
+| 插槽名 | 说明 | 是否必需 |
+|--------|------|----------|
+| `nav` | 导航栏内容 | 否 |
+| `main` | 主内容区 | 是 |
+| `aside` | 侧边栏内容 | 否 |
+
+## 📦 Store 类型
+
+### React 版本 (Zustand)
+
+```ts
+interface ResponsiveLayoutStore {
+  openNav: boolean;
+  openAside: boolean;
+  setOpenNav: (openNav: boolean) => void;
+  setOpenAside: (openAside: boolean) => void;
+  toggleNav: () => void;
+  toggleAside: () => void;
+}
+```
+
+### Vue 版本 (Pinia)
+
+```ts
+interface ResponsiveLayoutStore {
+  openNav: boolean;
+  openAside: boolean;
+  setOpenNav: (openNav: boolean) => void;
+  setOpenAside: (openAside: boolean) => void;
+  toggleNav: () => void;
+  toggleAside: () => void;
+}
+```
+
+## 🎯 核心功能
+
+- 自动响应式布局，适配不同屏幕尺寸
+- 支持导航栏和侧边栏的显示/隐藏
+- 平滑的过渡动画
+- 支持自定义宽度和样式
+- 移动端支持滑动切换
+
 ## 🛠️ 开发指南
 
-- 在 `packages/lib` 中开发你的组件
-- 在 `packages/page` 中预览和测试组件
-- 使用 `pnpm build:page` 构建页面
-- 使用 `pnpm build:lib` 构建库
-
+- React 版本在 `packages/react/lib` 中开发
+- Vue 版本在 `packages/vue/lib` 中开发
+- 在 `packages/page` 中预览和测试
+- 使用 `pnpm build` 构建库
 
 ## 📄 许可证
 MIT
+

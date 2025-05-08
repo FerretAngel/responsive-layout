@@ -1,6 +1,7 @@
 {
   "name": "responsive-layout-react",
   "version": "0.3.0",
+  "description": "Responsive Layout for React",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
