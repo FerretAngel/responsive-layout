@@ -5,14 +5,19 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter rc-page dev",
+    "dev:vue": "pnpm --filter vue-page dev",
     "build:rcp": "pnpm --filter rc-page build",
+    "build:vuep": "pnpm --filter vue-page build",
     "build:react": "pnpm --filter responsive-layout-react build",
-    "preview": "pnpm --filter rc-page preview"
+    "build:vue": "pnpm --filter responsive-layout-vue build",
+    "preview:rcp": "pnpm --filter rc-page preview",
+    "preview:vue": "pnpm --filter vue-page preview"
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "responsive-layout-react": "workspace:*"
+    "responsive-layout-react": "workspace:*",
+    "responsive-layout-vue": "workspace:*"
   },
   "keywords": [
     "responsive",
